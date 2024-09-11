@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "bf5b0579-e95d-470e-b6a0-4681218e088b",
+		"name": "DUX CHALLENGE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25274758"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODE3ODcsImV4cCI6MTcyNjA4MzU4NywianRpIjoiMmVkYWZjMzktY2NmZi00OWU4LTkxNzgtZTZiMmJkZjJiZmY0IiwibmJmIjoxNzI2MDgxNzg3fQ.lq82lJVzeO44UHkqUc1xSD1d9S-k_ndmmAEKDA8VN3E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teams/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teams/search?name=Madrid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Madrid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"River\",\r\n    \"league\": \"Liga Profesional\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"River Plate\",\r\n    \"league\": \"Liga Profesional\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
