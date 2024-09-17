@@ -12,16 +12,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class TeamDTO {
+public class EquipoDTO {
 
     private Long id;
 
     @NotBlank
-    private String name;
+    private String nombre;
 
     @NotBlank
-    private String league;
+    private String liga;
 
     @NotBlank
-    private String country;
+    private String pais;
 }

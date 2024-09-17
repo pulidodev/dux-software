@@ -42,7 +42,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODE3ODcsImV4cCI6MTcyNjA4MzU4NywianRpIjoiMmVkYWZjMzktY2NmZi00OWU4LTkxNzgtZTZiMmJkZjJiZmY0IiwibmJmIjoxNzI2MDgxNzg3fQ.lq82lJVzeO44UHkqUc1xSD1d9S-k_ndmmAEKDA8VN3E",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjY2MDAwMDEsImV4cCI6MTcyNjYwMTgwMSwianRpIjoiNzIyNmUwZGItZjE0My00ZTg3LWJkMjUtOWQ0NWJjZTQyMjkxIiwibmJmIjoxNzI2NjAwMDAxfQ.vkkqdbEIgaFIKw-8-auB8m9Hof1eGenjTcOTHKJkA1g",
 							"type": "string"
 						}
 					]
@@ -50,14 +50,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/teams",
+					"raw": "http://localhost:8080/equipos",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams"
+						"equipos"
 					]
 				}
 			},
@@ -71,7 +71,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjY2MDAwMDEsImV4cCI6MTcyNjYwMTgwMSwianRpIjoiNzIyNmUwZGItZjE0My00ZTg3LWJkMjUtOWQ0NWJjZTQyMjkxIiwibmJmIjoxNzI2NjAwMDAxfQ.vkkqdbEIgaFIKw-8-auB8m9Hof1eGenjTcOTHKJkA1g",
 							"type": "string"
 						}
 					]
@@ -79,14 +79,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/teams/:id",
+					"raw": "http://localhost:8080/equipos/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams",
+						"equipos",
 						":id"
 					],
 					"variable": [
@@ -107,7 +107,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjY2MDAwMDEsImV4cCI6MTcyNjYwMTgwMSwianRpIjoiNzIyNmUwZGItZjE0My00ZTg3LWJkMjUtOWQ0NWJjZTQyMjkxIiwibmJmIjoxNzI2NjAwMDAxfQ.vkkqdbEIgaFIKw-8-auB8m9Hof1eGenjTcOTHKJkA1g",
 							"type": "string"
 						}
 					]
@@ -115,19 +115,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/teams/search?name=Madrid",
+					"raw": "http://localhost:8080/equipos/buscar?nombre=Madrid",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams",
-						"search"
+						"equipos",
+						"buscar"
 					],
 					"query": [
 						{
-							"key": "name",
+							"key": "nombre",
 							"value": "Madrid"
 						}
 					]
@@ -143,7 +143,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjY2MDAwMDEsImV4cCI6MTcyNjYwMTgwMSwianRpIjoiNzIyNmUwZGItZjE0My00ZTg3LWJkMjUtOWQ0NWJjZTQyMjkxIiwibmJmIjoxNzI2NjAwMDAxfQ.vkkqdbEIgaFIKw-8-auB8m9Hof1eGenjTcOTHKJkA1g",
 							"type": "string"
 						}
 					]
@@ -152,7 +152,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"River\",\r\n    \"league\": \"Liga Profesional\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"raw": "{\r\n    \"nombre\": \"River\",\r\n    \"liga\": \"Liga Profesional\",\r\n    \"pais\": \"Argentina\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -160,14 +160,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams",
+					"raw": "http://localhost:8080/equipos",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams"
+						"equipos"
 					]
 				}
 			},
@@ -181,7 +181,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjY2MDAwMDEsImV4cCI6MTcyNjYwMTgwMSwianRpIjoiNzIyNmUwZGItZjE0My00ZTg3LWJkMjUtOWQ0NWJjZTQyMjkxIiwibmJmIjoxNzI2NjAwMDAxfQ.vkkqdbEIgaFIKw-8-auB8m9Hof1eGenjTcOTHKJkA1g",
 							"type": "string"
 						}
 					]
@@ -190,7 +190,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"River Plate\",\r\n    \"league\": \"Liga Profesional\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"raw": "{\r\n    \"nombre\": \"River Plate\",\r\n    \"liga\": \"Liga Profesional\",\r\n    \"pais\": \"Argentina\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -198,14 +198,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/:id",
+					"raw": "http://localhost:8080/equipos/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams",
+						"equipos",
 						":id"
 					],
 					"variable": [
@@ -226,7 +226,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjYwODIzNjIsImV4cCI6MTcyNjA4NDE2MiwianRpIjoiZTA2YjE4NGItZjdiYi00ZTZhLWI5MzEtMjFjZWY1MTZhYjE1IiwibmJmIjoxNzI2MDgyMzYyfQ._OUoi1xEKjK-IQWqnzi0Md0rAVmG0-v7BadFlVwwZVk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEVVgiLCJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOiIiLCJpYXQiOjE3MjY2MDAwMDEsImV4cCI6MTcyNjYwMTgwMSwianRpIjoiNzIyNmUwZGItZjE0My00ZTg3LWJkMjUtOWQ0NWJjZTQyMjkxIiwibmJmIjoxNzI2NjAwMDAxfQ.vkkqdbEIgaFIKw-8-auB8m9Hof1eGenjTcOTHKJkA1g",
 							"type": "string"
 						}
 					]
@@ -243,14 +243,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/:id",
+					"raw": "http://localhost:8080/equipos/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams",
+						"equipos",
 						":id"
 					],
 					"variable": [

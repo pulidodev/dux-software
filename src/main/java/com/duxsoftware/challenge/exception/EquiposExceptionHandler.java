@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.duxsoftware.challenge.dto.ExceptionDTO;
 
 @RestControllerAdvice
-public class TeamsExceptionHandler {
+public class EquiposExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ExceptionDTO> handleInvalidTeamData(MethodArgumentNotValidException ex) {
-        return new ResponseEntity<>(new ExceptionDTO(ex.getMessage(),
+    public ResponseEntity<ExceptionDTO> handleInvalidEquipoData(MethodArgumentNotValidException ex) {
+        return new ResponseEntity<>(new ExceptionDTO("La solicitud es invalida",
                 HttpStatus.BAD_REQUEST.value()), HttpStatus.BAD_REQUEST);
     }
 
@@ -27,9 +27,9 @@ public class TeamsExceptionHandler {
                 HttpStatus.UNAUTHORIZED);
     }
 
-    @ExceptionHandler(TeamNotFoundException.class)
+    @ExceptionHandler(EquipoNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<ExceptionDTO> handleTeamNotFound(TeamNotFoundException ex) {
+    public ResponseEntity<ExceptionDTO> handleEquipoNotFound(EquipoNotFoundException ex) {
         return new ResponseEntity<>(new ExceptionDTO(ex.getMessage(), HttpStatus.NOT_FOUND.value()),
                 HttpStatus.NOT_FOUND);
     }

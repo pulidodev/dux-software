@@ -12,21 +12,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "teams")
+@Table(name = "equipos")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Team {
+public class Equipo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String nombre;
 
-    private String league;
+    private String liga;
 
-    private String country;
+    private String pais;
 }

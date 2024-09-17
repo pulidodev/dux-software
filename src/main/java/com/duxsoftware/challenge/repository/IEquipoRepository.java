@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.duxsoftware.challenge.model.Team;
+import com.duxsoftware.challenge.model.Equipo;
 
 @Repository
-public interface ITeamRepository extends JpaRepository<Team, Long> {
+public interface IEquipoRepository extends JpaRepository<Equipo, Long> {
 
-    public Optional<List<Team>> findByNameContainingIgnoreCase(String name);
+    public Optional<List<Equipo>> findByNombreContainingIgnoreCase(String nombre);
 }

@@ -18,52 +18,52 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.duxsoftware.challenge.dto.TeamDTO;
-import com.duxsoftware.challenge.exception.TeamNotFoundException;
-import com.duxsoftware.challenge.mapper.TeamMapper;
-import com.duxsoftware.challenge.model.Team;
-import com.duxsoftware.challenge.repository.ITeamRepository;
-import com.duxsoftware.challenge.service.impl.TeamServiceImpl;
+import com.duxsoftware.challenge.dto.EquipoDTO;
+import com.duxsoftware.challenge.exception.EquipoNotFoundException;
+import com.duxsoftware.challenge.mapper.EquipoMapper;
+import com.duxsoftware.challenge.model.Equipo;
+import com.duxsoftware.challenge.repository.IEquipoRepository;
+import com.duxsoftware.challenge.service.impl.EquipoServiceImpl;
 
-class TeamServiceTest {
-
-    @Mock
-    private ITeamRepository repository;
+class EquipoServiceTest {
 
     @Mock
-    private TeamMapper mapper;
+    private IEquipoRepository repository;
+
+    @Mock
+    private EquipoMapper mapper;
 
     @InjectMocks
-    private TeamServiceImpl service;
+    private EquipoServiceImpl service;
 
-    private Team team;
+    private Equipo equipo;
 
-    private TeamDTO teamDTO;
+    private EquipoDTO equipoDTO;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        team = Team.builder()
+        equipo = Equipo.builder()
                 .id(1L)
-                .name("Manchester United")
-                .league("Premier League")
-                .country("Inglaterra")
+                .nombre("Manchester United")
+                .liga("Premier League")
+                .pais("Inglaterra")
                 .build();
-        teamDTO = TeamDTO.builder()
+        equipoDTO = EquipoDTO.builder()
                 .id(1L)
-                .name("Manchester United")
-                .league("Premier League")
-                .country("Inglaterra")
+                .nombre("Manchester United")
+                .liga("Premier League")
+                .pais("Inglaterra")
                 .build();
     }
 
     @Test
-    void testGetAllTeamsExist() {
-        List<Team> teams = List.of(team);
-        when(repository.findAll()).thenReturn(teams);
-        when(mapper.toDTOList(teams)).thenReturn(List.of(teamDTO));
+    void testGetAllEquiposExist() {
+        List<Equipo> equipos = List.of(equipo);
+        when(repository.findAll()).thenReturn(equipos);
+        when(mapper.toDTOList(equipos)).thenReturn(List.of(equipoDTO));
 
-        List<TeamDTO> result = service.getAll();
+        List<EquipoDTO> result = service.getAll();
 
         assertNotNull(result);
         assertEquals(1, result.size());
@@ -71,96 +71,96 @@ class TeamServiceTest {
     }
 
     @Test
-    void testGetAllNoTeamsFound() {
+    void testGetAllNoEquiposFound() {
         when(repository.findAll()).thenReturn(new ArrayList<>());
 
-        assertThrows(TeamNotFoundException.class, () -> service.getAll());
+        assertThrows(EquipoNotFoundException.class, () -> service.getAll());
 
         verify(repository).findAll();
     }
 
     @Test
-    void testGetByIdTeamExists() {
-        when(repository.findById(1L)).thenReturn(Optional.of(team));
-        when(mapper.toDTO(team)).thenReturn(teamDTO);
+    void testGetByIdEquipoExists() {
+        when(repository.findById(1L)).thenReturn(Optional.of(equipo));
+        when(mapper.toDTO(equipo)).thenReturn(equipoDTO);
 
-        TeamDTO result = service.getById(1L);
+        EquipoDTO result = service.getById(1L);
 
         assertNotNull(result);
-        assertEquals("Manchester United", result.getName());
+        assertEquals("Manchester United", result.getNombre());
         verify(repository).findById(1L);
     }
 
     @Test
-    void testGetByIdTeamNotFound() {
+    void testGetByIdEquipoNotFound() {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
-        assertThrows(TeamNotFoundException.class, () -> service.getById(1L));
+        assertThrows(EquipoNotFoundException.class, () -> service.getById(1L));
 
         verify(repository).findById(1L);
     }
 
     @Test
-    void testGetByNameTeamsExist() {
-        List<Team> teams = List.of(team);
-        when(repository.findByNameContainingIgnoreCase("Team")).thenReturn(Optional.of(teams));
-        when(mapper.toDTOList(teams)).thenReturn(List.of(teamDTO));
+    void testGetByNombreEquiposExist() {
+        List<Equipo> equipos = List.of(equipo);
+        when(repository.findByNombreContainingIgnoreCase("Equipo")).thenReturn(Optional.of(equipos));
+        when(mapper.toDTOList(equipos)).thenReturn(List.of(equipoDTO));
 
-        List<TeamDTO> result = service.getByName("Team");
+        List<EquipoDTO> result = service.getByNombre("Equipo");
 
         assertNotNull(result);
         assertEquals(1, result.size());
-        verify(repository).findByNameContainingIgnoreCase("Team");
+        verify(repository).findByNombreContainingIgnoreCase("Equipo");
     }
 
     @Test
-    void testGetByNameNoTeamsFound() {
-        when(repository.findByNameContainingIgnoreCase("Team")).thenReturn(Optional.of(new ArrayList<>()));
+    void testGetByNombreNoEquiposFound() {
+        when(repository.findByNombreContainingIgnoreCase("Equipo")).thenReturn(Optional.of(new ArrayList<>()));
 
-        assertThrows(TeamNotFoundException.class, () -> service.getByName("Team"));
+        assertThrows(EquipoNotFoundException.class, () -> service.getByNombre("Equipo"));
 
-        verify(repository).findByNameContainingIgnoreCase("Team");
+        verify(repository).findByNombreContainingIgnoreCase("Equipo");
     }
 
     @Test
-    void testCreateTeamCreated() {
-        when(repository.save(any(Team.class))).thenReturn(team);
-        when(mapper.toEntity(any(TeamDTO.class))).thenReturn(team);
-        when(mapper.toDTO(team)).thenReturn(teamDTO);
+    void testCreateEquipoCreated() {
+        when(repository.save(any(Equipo.class))).thenReturn(equipo);
+        when(mapper.toEntity(any(EquipoDTO.class))).thenReturn(equipo);
+        when(mapper.toDTO(equipo)).thenReturn(equipoDTO);
 
-        TeamDTO result = service.create(teamDTO);
+        EquipoDTO result = service.create(equipoDTO);
 
         assertNotNull(result);
-        assertEquals("Manchester United", result.getName());
-        verify(repository).save(any(Team.class));
+        assertEquals("Manchester United", result.getNombre());
+        verify(repository).save(any(Equipo.class));
     }
 
     @Test
-    void testUpdateTeamExists() {
-        when(repository.findById(1L)).thenReturn(Optional.of(team));
-        doNothing().when(mapper).updateEntityFromDTO(teamDTO, team);
-        when(repository.save(team)).thenReturn(team);
-        when(mapper.toDTO(team)).thenReturn(teamDTO);
+    void testUpdateEquipoExists() {
+        when(repository.findById(1L)).thenReturn(Optional.of(equipo));
+        doNothing().when(mapper).updateEntityFromDTO(equipoDTO, equipo);
+        when(repository.save(equipo)).thenReturn(equipo);
+        when(mapper.toDTO(equipo)).thenReturn(equipoDTO);
 
-        TeamDTO result = service.update(1L, teamDTO);
+        EquipoDTO result = service.update(1L, equipoDTO);
 
         assertNotNull(result);
-        assertEquals("Manchester United", result.getName());
+        assertEquals("Manchester United", result.getNombre());
         verify(repository).findById(1L);
-        verify(repository).save(team);
+        verify(repository).save(equipo);
     }
 
     @Test
-    void testUpdateTeamNotFound() {
+    void testUpdateEquipoNotFound() {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
-        assertThrows(TeamNotFoundException.class, () -> service.update(1L, teamDTO));
+        assertThrows(EquipoNotFoundException.class, () -> service.update(1L, equipoDTO));
 
         verify(repository).findById(1L);
     }
 
     @Test
-    void testDeleteByIdTeamExists() {
+    void testDeleteByIdEquipoExists() {
         when(repository.existsById(1L)).thenReturn(true);
         doNothing().when(repository).deleteById(1L);
 
@@ -170,10 +170,10 @@ class TeamServiceTest {
     }
 
     @Test
-    void testDeleteByIdTeamNotFound() {
+    void testDeleteByIdEquipoNotFound() {
         when(repository.existsById(1L)).thenReturn(false);
 
-        assertThrows(TeamNotFoundException.class, () -> service.deleteById(1L));
+        assertThrows(EquipoNotFoundException.class, () -> service.deleteById(1L));
 
         verify(repository).existsById(1L);
     }
